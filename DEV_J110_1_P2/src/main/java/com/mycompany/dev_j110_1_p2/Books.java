@@ -90,9 +90,9 @@ public class Books {
 
     public String getAuthorIndex(int index){
         if(index<0)
-            throw new IllegalArgumentException("Некоректный индекс");
+            throw new IllegalArgumentException("Некоректный индекс ");
         if(index>=authors.length)
-            throw new IllegalArgumentException("Индекс больше длины масива");
+            throw new IllegalArgumentException("Индекс больше длины масива ");
         return authors[index];
 
 

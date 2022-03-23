@@ -21,8 +21,8 @@ public class DEV_J110_1_P2 {
         Books [] books = new Books[5];
         books[0]=new Books("Computer Science: основы программирования на Java, ООП, алгоритмы и структуры данных",new String[]{"Седжвик Роберт,Уэйн Кевин"},2018,ps);
         books[1]=new Books("Разработка требований к программному обеспечению. 3-е издание, дополненное",new String[]{"Вигерс Карл"},2019,bs);
-        books[2]=new Books("Java. Полное руководство, 10-е издание",new String[]{"Шилдт Герберт"}, 2018,dk);
-        books[3]=new Books("C/C++. Процедурное программирование",new String[]{"Полубенцева М.И."},2017,bs);
+        books[2]=new Books("Java. Полное руководство, 10-е издание ",new String[]{"Шилдт Герберт"}, 2018,dk);
+        books[3]=new Books("C/C++. Процедурное программирование ",new String[]{"Полубенцева М.И."},2017,bs);
         books[4]=new Books("Конституция РФ",2020,pm);
 
         Books.printAll(books);
