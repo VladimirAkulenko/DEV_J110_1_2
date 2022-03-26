@@ -70,7 +70,8 @@ public class Books {
     public void setAuthors(String[] authors) {
         if (authors != null){
             for (String author:authors) {
-                if (author==null && author.isEmpty()) throw new IllegalArgumentException("Список авторов содержит пустые ссылки");
+                if (author==null && author.isEmpty()) 
+                    throw new IllegalArgumentException("Список авторов содержит пустые ссылки");
             }
         }
         this.authors = authors;
