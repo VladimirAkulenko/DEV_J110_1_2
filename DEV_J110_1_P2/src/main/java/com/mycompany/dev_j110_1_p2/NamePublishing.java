@@ -22,7 +22,7 @@ public class NamePublishing {
     }
 
     public void setPublisherName(String publisherName) {
-        if(publisherName == null) throw new IllegalArgumentException("Пустая ссылка ");
+        if(publisherName == null) throw new IllegalArgumentException("Пустая ссылка");
         this.publisherName = publisherName;
     }
 

@@ -70,7 +70,7 @@ public class Books {
     public void setAuthors(String[] authors) {
         if (authors != null){
             for (String author:authors) {
-                if (author==null) throw new IllegalArgumentException("Список авторов содержит пустые ссылки");
+                if (author==null && author.isEmpty()) throw new IllegalArgumentException("Список авторов содержит пустые ссылки");
             }
         }
         this.authors = authors;
@@ -79,21 +79,24 @@ public class Books {
     public void setAuthor(String author){
         if (author == null)
              throw new IllegalArgumentException("Автор содержит пустую ссылку");
-        this.authors = authors;
+        this.authors = new String[1];
+        authors[0] = author;
 
 
     }
 
     public int getAuthorAmount(){
+        if(authors [0] == null)
         return authors.length;
+        return 0;
     }
 
     public String getAuthorIndex(int index){
         if(index<0)
-            throw new IllegalArgumentException("Некоректный индекс ");
-        if(index>=authors.length)
-            throw new IllegalArgumentException("Индекс больше длины масива ");
+            throw new IllegalArgumentException("Некоректный индекс");
+        if(authors == null && index>=authors.length)
         return authors[index];
+        throw new IllegalArgumentException("Индекс больше длины масива");
 
 
     }
@@ -101,16 +104,14 @@ public class Books {
 
     public void print (){
         if(authors!=null)
-            System.out.println(getName()+";"+Arrays.toString(authors)+";"+getPublishing().getPublisherName()+";"+getPublishing().getCity()+";"+getYear()+";");
+            System.out.println(getName()+";"+ Arrays.toString(authors)+";"+getPublishing().getPublisherName()+";"+getPublishing().getCity()+";"+getYear()+";");
         else
         System.out.println(getName()+";"+getPublishing().getPublisherName()+";"+getPublishing().getCity()+";"+getYear()+";");
     }
 
     public static void printAll ( Books [] books){
-        books[0].print();
-        books[1].print();
-        books[2].print();
-        books[3].print();
-        books[4].print();
+        for (Books book: books) {
+            book.print();
+        }
     }
 }

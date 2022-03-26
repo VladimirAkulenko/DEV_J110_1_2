@@ -28,7 +28,10 @@ public class DEV_J110_1_P2 {
         Books.printAll(books);
 
         for (Books book: books) {
-
+            if(book.getPublishing().getCity().equals("Санкт-Петебург"))
+                book.getPublishing().setCity("Санкт-Петербург");
         }
+        System.out.println("----------------------");
+        Books.printAll(books);
     }
 }
