@@ -23,17 +23,13 @@ public class Books {
     }
 
     public Books(String name, String author, int year, NamePublishing publishing) {
-        setName(name);
+        this(name, year, publishing);
         setAuthor(author);
-        setYear(year);
-        setPublishing(publishing);
     }
 
     public Books(String name, String[] authors, int year, NamePublishing publishing) {
-        setName(name);
+        this(name, year, publishing);
         setAuthors(authors);
-        setYear(year);
-        setPublishing(publishing);
     }
 
     public String getName() {
@@ -93,11 +89,10 @@ public class Books {
     }
 
     public String getAuthorIndex(int index){
-        if(index<0)
-            throw new IllegalArgumentException("Некоректный индекс");
-        if(authors == null && index>=authors.length)
-        return authors[index];
-        throw new IllegalArgumentException("Индекс больше длины масива");
+        if(authors != null && index>=0 && index< authors.length)
+            return authors[index];
+        else
+            throw new IllegalArgumentException("Некоректно указан индекс");
 
 
     }
